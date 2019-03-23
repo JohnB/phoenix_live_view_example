@@ -11,6 +11,13 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
 Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
 
+# Roadmap
+* [ ] Move collaborative_canvas to the root
+* [ ] Create a genserver to hold the board state
+* [ ] Use the genserver holding the state
+* [ ] Verify that collaboration works
+* [ ] Deploy to Heroku
+
 ## Learn more
 
   * Official website: http://www.phoenixframework.org/
