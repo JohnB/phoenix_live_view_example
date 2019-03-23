@@ -20,6 +20,7 @@ defmodule DemoWeb.Router do
 
     get "/", PageController, :index
 
+    live "/collaborative_canvas", CollaborativeCanvasLive
     live "/thermostat", ThermostatLive
     get "/snake", PageController, :snake
     live "/search", SearchLive

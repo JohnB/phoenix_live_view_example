@@ -1,0 +1,29 @@
+.board {
+    width: 80px;
+}
+
+.board td {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    min-height: 20px;
+    border: 1px solid black;
+    padding: 0;
+    margin: 0;
+}
+button:hover {
+    background-color: pink;
+    border-color: white;
+    border-width: medium;
+}
+.selected {
+    border-style: dotted;
+    border-color: black;
+    border-width: medium;
+}
+.red { background-color: red }
+.green { background-color: green }
+.blue { background-color: blue }
+.yellow { background-color: yellow }
+.orange { background-color: orange }
+.white { background-color: white }
