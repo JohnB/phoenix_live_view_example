@@ -16,8 +16,9 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
 * [x] Create a genserver to hold the board state
 * [x] Use the genserver holding the state
 * [*] Verify that collaboration works (it _mostly_ does, with a refresh)
-* [ ] Force a refresh so everyone sees it up to date
-* [ ] Move collaborative_canvas to the root
+* [*] Force a refresh so everyone sees it up to date
+* [ ] Expand board to 10x10
+* [ ] Move collaborative_canvas to the root?
 
 ## Heroku Limits
 * [50 simultaneous connections](https://devcenter.heroku.com/articles/http-routing#request-concurrency)

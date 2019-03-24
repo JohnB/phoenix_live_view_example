@@ -78,6 +78,9 @@ defmodule DemoWeb.CollaborativeCanvasLive do
   end
 
   def mount(_session, socket) do
+    # Force a refresh every second, to keep up with other painters.
+    if connected?(socket), do: :timer.send_interval(1_000, self(), :tick)
+
     %{board: board, width: width, height: height} = Board.board()
     {:ok, assign(socket,
       paint: "blue",
@@ -86,6 +89,11 @@ defmodule DemoWeb.CollaborativeCanvasLive do
       board: board,
       selected: %{"blue" => "selected"}
     )}
+  end
+  
+  def handle_info(:tick, socket) do
+    %{board: board} = Board.board()
+    {:noreply, assign(socket, board: board)}
   end
 
   def handle_event("set-color-red", _, socket) do
@@ -109,7 +117,7 @@ defmodule DemoWeb.CollaborativeCanvasLive do
 
   def handle_event("paint-one-cell_" <> location, _, socket) do
     %{paint: paint} = socket.assigns
-    %{board: board, width: width, height: height} = Board.paint_one_square(location, paint)
+    %{board: board} = Board.paint_one_square(location, paint)
     
     {:noreply, assign(socket, board: board)}
   end
