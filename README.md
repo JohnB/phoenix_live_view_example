@@ -12,11 +12,19 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
 
 # Roadmap
+* [ ] Deploy to [Heroku](https://stormy-earth-96381.herokuapp.com/)
 * [ ] Move collaborative_canvas to the root
 * [ ] Create a genserver to hold the board state
 * [ ] Use the genserver holding the state
 * [ ] Verify that collaboration works
-* [ ] Deploy to Heroku
+
+## Heroku Limits
+* [50 simultaneous connections](https://devcenter.heroku.com/articles/http-routing#request-concurrency)
+ (elixir can handle many more than this).
+* [connections are dropped](https://devcenter.heroku.com/articles/limits#http-timeouts)
+ when no data is seen in 55 seconds.
+* the app will be restarted
+ [every 24 hours](https://devcenter.heroku.com/articles/limits#detached-one-off-dyno-timeout).
 
 ## Learn more
 

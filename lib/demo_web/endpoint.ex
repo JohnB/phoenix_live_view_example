@@ -4,7 +4,7 @@ defmodule DemoWeb.Endpoint do
   socket "/live", Phoenix.LiveView.Socket, websocket: true
 
   socket "/socket", DemoWeb.UserSocket,
-    websocket: true,
+    websocket: [timeout: 45_000], # drop connection at 45 seconds, before Heroku does at 55 seconds.
     longpoll: false
 
   # Serve at "/" the static files from "priv/static" directory.
