@@ -24,12 +24,13 @@ defmodule Board do
   
   # Server
   def init(_init_arg) do
-    {:ok, %{width: 10, height: 10, board: %{}}}
+    {:ok, %{width: 5, height: 5, board: %{}}}
   end
   
   def handle_call({:paint_one_square, location, color}, _from, state) do
     %{board: board, width: width, height: height} = state
     board = put_in(board[location], color)
+    IO.puts(inspect(board))
     state = %{board: board, width: width, height: height}
 
     {:reply, state, state}

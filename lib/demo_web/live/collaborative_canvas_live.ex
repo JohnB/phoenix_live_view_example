@@ -4,6 +4,12 @@ defmodule DemoWeb.CollaborativeCanvasLive do
 
   def render(assigns) do
     %{board: board, width: width, height: height} = assigns
+    inner_table = Enum.map_join(1..height, "</tr><tr>", fn y ->
+                    Enum.map_join(1..width, fn x ->
+                      ~s(<td phx-click="paint-one-cell_#{x}_#{y}" class="<%= @board["#{x}_#{y}"] %></td>)
+                    end)
+                  end)
+    IO.puts(inner_table)
 
     ~L"""
     <div class="color-picker">
@@ -35,11 +41,7 @@ defmodule DemoWeb.CollaborativeCanvasLive do
     <table class="board">
       <tbody>
         <tr>
-        #{ Enum.map_join(1..height, "</tr><tr>", fn y -> "
-          #{ Enum.map_join(1..width, fn x ->
-            "<td phx-click="paint-one-cell_#{x},#{y}" class="<%= @board["#{x},#{y}"] %>">
-             </td>" end) }
-        " end) }
+        #{ Phoenix.HTML.raw(inner_table) }
         </tr>
       <tbody>
     </table>
