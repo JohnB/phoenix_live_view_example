@@ -12,6 +12,10 @@ defmodule Demo.Application do
 
     opts = [strategy: :one_for_one, name: Demo.Supervisor]
     Supervisor.start_link(children, opts)
+    
+    # Start our board here, so it is not tied to the first arriving user
+    # (who may refresh, which would drop the game state).
+    Board.start_link()
   end
 
   def config_change(changed, _new, removed) do
