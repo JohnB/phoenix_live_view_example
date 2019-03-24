@@ -81,7 +81,7 @@ defmodule DemoWeb.CollaborativeCanvasLive do
     # Refresh the client periodically, to keep up with other painters.
     if connected?(socket), do: :timer.send_interval( 10_000, self(), :tick)
     # Force a refresh just before heroku would drop the connection.
-    if connected?(socket), do: :timer.send_interval( 49_500, self(), :heroku_hickup)
+#    if connected?(socket), do: :timer.send_interval( 49_500, self(), :heroku_hickup)
 
     %{board: board, width: width, height: height} = Board.board()
     {:ok, assign(socket,
