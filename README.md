@@ -12,11 +12,11 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
 
 # Roadmap
-* [ ] Deploy to [Heroku](https://stormy-earth-96381.herokuapp.com/)
-* [ ] Move collaborative_canvas to the root
+* [x] Deploy to [Heroku](https://stormy-earth-96381.herokuapp.com/)
 * [ ] Create a genserver to hold the board state
 * [ ] Use the genserver holding the state
 * [ ] Verify that collaboration works
+* [ ] Move collaborative_canvas to the root
 
 ## Heroku Limits
 * [50 simultaneous connections](https://devcenter.heroku.com/articles/http-routing#request-concurrency)
