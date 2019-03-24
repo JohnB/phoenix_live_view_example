@@ -8,16 +8,7 @@
     <h4>LiveView Examples</h4>
     <ul>
       <li><%= link "Collaborative Canvas", to: Routes.live_path(@conn, DemoWeb.CollaborativeCanvasLive) %></li>
-      <li><%= link "Thermostat", to: Routes.live_path(@conn, DemoWeb.ThermostatLive) %></li>
       <li><%= link "Snake", to: Routes.page_path(@conn, :snake) %></li>
-      <li><%= link "Search with Autocomplete", to: Routes.live_path(@conn, DemoWeb.SearchLive) %></li>
-      <li><%= link "Image Editor", to: Routes.live_path(@conn, DemoWeb.ImageLive) %></li>
-      <li><%= link "Clock", to: Routes.live_path(@conn, DemoWeb.ClockLive) %></li>
-      <li><%= link "Pacman", to: Routes.live_path(@conn, DemoWeb.PacmanLive) %></li>
-      <li><%= link "Rainbow", to: Routes.live_path(@conn, DemoWeb.RainbowLive) %></li>
-      <li><%= link "Counter", to: Routes.live_path(@conn, DemoWeb.CounterLive) %></li>
-      <li><%= link "CRUD Users", to: Routes.live_path(@conn, DemoWeb.UserLive.Index) %></li>
-      <li><%= link "Presence Example", to: Routes.live_path(@conn, DemoWeb.UserLive.PresenceIndex, "user#{System.unique_integer([:positive])}") %></li>
     </ul>
   </article>
 </section>

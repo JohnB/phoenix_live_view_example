@@ -19,8 +19,10 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
 * [x] Use the genserver holding the state
 * [*] Verify that collaboration works (it _mostly_ does, with a refresh)
 * [*] Force a refresh so everyone sees it up to date
+* [*] Remove unused routes (keep the source as reading material)
 * [ ] Expand board to 10x10
-* [ ] Move collaborative_canvas to the root?
+* [ ] Look at lowest-tier Heroku pricing
+* [ ] Tear it down when jerks get ahold of it
 
 ## Heroku Limits
 * [50 simultaneous connections](https://devcenter.heroku.com/articles/http-routing#request-concurrency)
@@ -32,6 +34,7 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
 
 ## Learn more
 
+  * Get Started: http://www.phoenixframework.org/docs
   * Official website: http://www.phoenixframework.org/
   * Guides: http://phoenixframework.org/docs/overview
   * Docs: https://hexdocs.pm/phoenix
