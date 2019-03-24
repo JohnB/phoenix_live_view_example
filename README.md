@@ -1,5 +1,7 @@
 # Demo
 
+See it [live on Heroku](https://stormy-earth-96381.herokuapp.com/collaborative_canvas)!
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
