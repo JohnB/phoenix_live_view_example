@@ -13,9 +13,10 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
 
 # Roadmap
 * [x] Deploy to [Heroku](https://stormy-earth-96381.herokuapp.com/)
-* [ ] Create a genserver to hold the board state
-* [ ] Use the genserver holding the state
-* [ ] Verify that collaboration works
+* [x] Create a genserver to hold the board state
+* [x] Use the genserver holding the state
+* [*] Verify that collaboration works (it _mostly_ does, with a refresh)
+* [ ] Force a refresh so everyone sees it up to date
 * [ ] Move collaborative_canvas to the root
 
 ## Heroku Limits
