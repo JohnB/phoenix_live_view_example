@@ -3,6 +3,8 @@ defmodule DemoWeb.CollaborativeCanvasLive do
   import Calendar.Strftime
 
   def render(assigns) do
+    %{board: board, width: width, height: height} = assigns
+
     ~L"""
     <div class="color-picker">
       <button
@@ -33,44 +35,11 @@ defmodule DemoWeb.CollaborativeCanvasLive do
     <table class="board">
       <tbody>
         <tr>
-          <td id="01" phx-click="paint-one-cell_01" class="<%= @board["01"] %>">
-          </td>
-          <td id="02" phx-click="paint-one-cell_02" class="<%= @board["02"] %>">
-          </td>
-          <td id="03" phx-click="paint-one-cell_03" class="<%= @board["03"] %>">
-          </td>
-          <td id="04" phx-click="paint-one-cell_04" class="<%= @board["04"] %>">
-          </td>
-        </tr>
-        <tr>
-          <td id="05" phx-click="paint-one-cell_05" class="<%= @board["05"] %>">
-          </td>
-          <td id="06" phx-click="paint-one-cell_06" class="<%= @board["06"] %>">
-          </td>
-          <td id="07" phx-click="paint-one-cell_07" class="<%= @board["07"] %>">
-          </td>
-          <td id="08" phx-click="paint-one-cell_08" class="<%= @board["08"] %>">
-          </td>
-        </tr>
-        <tr>
-          <td id="09" phx-click="paint-one-cell_09" class="<%= @board["09"] %>">
-          </td>
-          <td id="10" phx-click="paint-one-cell_10" class="<%= @board["10"] %>">
-          </td>
-          <td id="11" phx-click="paint-one-cell_11" class="<%= @board["11"] %>">
-          </td>
-          <td id="12" phx-click="paint-one-cell_12" class="<%= @board["12"] %>">
-          </td>
-        </tr>
-        <tr>
-          <td id="13" phx-click="paint-one-cell_13" class="<%= @board["13"] %>">
-          </td>
-          <td id="14" phx-click="paint-one-cell_14" class="<%= @board["14"] %>">
-          </td>
-          <td id="15" phx-click="paint-one-cell_15" class="<%= @board["15"] %>">
-          </td>
-          <td id="16" phx-click="paint-one-cell_16" class="<%= @board["16"] %>">
-          </td>
+        #{ Enum.map_join(1..height, "</tr><tr>", fn y -> "
+          #{ Enum.map_join(1..width, fn x ->
+            "<td phx-click="paint-one-cell_#{x},#{y}" class="<%= @board["#{x},#{y}"] %>">
+             </td>" end) }
+        " end) }
         </tr>
       <tbody>
     </table>
