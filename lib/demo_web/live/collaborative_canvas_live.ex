@@ -79,9 +79,7 @@ defmodule DemoWeb.CollaborativeCanvasLive do
 
   def mount(_session, socket) do
     # Refresh the client periodically, to keep up with other painters.
-    if connected?(socket), do: :timer.send_interval( 10_000, self(), :tick)
-    # Force a refresh just before heroku would drop the connection.
-#    if connected?(socket), do: :timer.send_interval( 49_500, self(), :heroku_hickup)
+    if connected?(socket), do: :timer.send_interval(  1_000, self(), :tick)
 
     %{board: board, width: width, height: height} = Board.board()
     {:ok, assign(socket,
@@ -96,16 +94,6 @@ defmodule DemoWeb.CollaborativeCanvasLive do
   def handle_info(:tick, socket) do
     %{board: board} = Board.board()
     {:noreply, assign(socket, board: board)}
-  end
-
-  # Our socket is continuing to send and receive JSON data
-  # while people are on the page, but Heroku's servers are
-  # looking for HTTP *connections*
-  # to decide whether to drop the connection - and we lose
-  # collaborative updates when that happens, so we'd rather
-  # force an immediate reconnect when *we* choose.
-  def handle_info(:heroku_hickup, socket) do
-    render(socket.assigns)
   end
 
   def handle_event("set-color-red", _, socket) do
