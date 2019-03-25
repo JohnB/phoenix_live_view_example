@@ -24,18 +24,29 @@ defmodule Board do
   
   # Server
   def init(_init_arg) do
-    {:ok, %{width: 10, height: 10, board: %{}}}
+    {:ok, %{width: 10, height: 10, board: %{}, user_count: 0, current_count: 0, reset_at: Time.utc_now}}
   end
   
   def handle_call({:paint_one_square, location, color}, _from, state) do
-    %{board: board, width: width, height: height} = state
+    %{board: board} = state
     board = put_in(board[location], color)
-    state = %{board: board, width: width, height: height}
+    state = Map.merge(state, %{board: board})
 
     {:reply, state, state}
   end
   
   def handle_call({:get_board}, _from, state) do
-    {:reply, state, state}
+    current_count = state[:current_count] + 1
+    now = Time.utc_now
+    
+    # We expect callers to get the board every second, so if more than a second has elapsed,
+    # update our user count and reset the time.
+    if Time.diff(now, state[:reset_at]) > 0 do
+      state = Map.merge(state, %{reset_at: now, user_count: current_count, current_count: 0})
+      {:reply, state, state}
+    else
+      state = put_in(state[:current_count], current_count)
+      {:reply, state, state}
+    end
   end
 end

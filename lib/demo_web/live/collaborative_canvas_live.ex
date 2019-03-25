@@ -29,6 +29,7 @@ defmodule DemoWeb.CollaborativeCanvasLive do
         class="white <%= @selected["white"] %>"
         phx-click="set-color-white">
       </button>
+      Users: <%= @user_count %>
     </div>
     <table class="board">
       <tbody>
@@ -87,13 +88,14 @@ defmodule DemoWeb.CollaborativeCanvasLive do
       width: width,
       height: height,
       board: board,
+      user_count: 0,
       selected: %{"blue" => "selected"}
     )}
   end
   
   def handle_info(:tick, socket) do
-    %{board: board} = Board.board()
-    {:noreply, assign(socket, board: board)}
+    %{board: board, user_count: user_count} = Board.board()
+    {:noreply, assign(socket, board: board, user_count: user_count)}
   end
 
   def handle_event("set-color-red", _, socket) do
@@ -117,8 +119,7 @@ defmodule DemoWeb.CollaborativeCanvasLive do
 
   def handle_event("paint-one-cell_" <> location, _, socket) do
     %{paint: paint} = socket.assigns
-    %{board: board} = Board.paint_one_square(location, paint)
-    
-    {:noreply, assign(socket, board: board)}
+    %{board: board, user_count: user_count} = Board.paint_one_square(location, paint)
+    {:noreply, assign(socket, board: board, user_count: user_count)}
   end
 end
