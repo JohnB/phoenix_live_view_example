@@ -36,18 +36,18 @@ defmodule Board do
   end
   
   def handle_call({:get_board}, _from, state) do
-    current_count = state[:current_count] + 1
+    current_count = state[:current_count]
     now = Time.utc_now
     
     # We expect callers to get the board every second, so if more than a second has elapsed,
     # update our user count and reset the time.
     if Time.diff(now, state[:reset_at]) > 0 do
-      IO.puts(inspect {"reset", current_count, now})
+      #IO.puts(inspect {"reset", current_count, now})
       state = Map.merge(state, %{reset_at: now, user_count: current_count, current_count: 0})
       {:reply, state, state}
     else
-      IO.puts(inspect {"update", current_count, now})
-      state = put_in(state[:current_count], current_count)
+      #IO.puts(inspect {"update", current_count, now})
+      state = put_in(state[:current_count], current_count + 1)
       {:reply, state, state}
     end
   end
