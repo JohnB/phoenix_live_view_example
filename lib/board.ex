@@ -24,7 +24,8 @@ defmodule Board do
   
   # Server
   def init(_init_arg) do
-    {:ok, %{width: 10, height: 10, board: %{}, user_count: 0, current_count: 0, reset_at: Time.utc_now}}
+    # The bogus 12345 value will be fixed on the first 1-second update of the actual count.
+    {:ok, %{width: 10, height: 10, board: %{}, user_count: 12345, current_count: 0, reset_at: Time.utc_now}}
   end
   
   def handle_call({:paint_one_square, location, color}, _from, state) do
@@ -42,7 +43,11 @@ defmodule Board do
     # We expect callers to get the board every second, so if more than a second has elapsed,
     # update our user count and reset the time.
     if Time.diff(now, state[:reset_at]) > 0 do
-      #IO.puts(inspect {"reset", current_count, now})
+      # NOTE: when running this code locally, the value of user_count is an off-by-one
+      # too low - but seems to work fine on Heroku. So there is some bug - maybe it becomes
+      # weirdly synchronous on localhost - or maybe wrong in both places but Heroku deployment
+      # causes an offsetting bug (such as one rogue client which has been continuously connected).
+      # (consider resetting the secret key, to kick such clients out)
       state = Map.merge(state, %{reset_at: now, user_count: current_count, current_count: 0})
       {:reply, state, state}
     else
