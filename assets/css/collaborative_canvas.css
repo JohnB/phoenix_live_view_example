@@ -11,6 +11,10 @@
     padding: 0;
     margin: 0;
 }
+
+.border_e { border-width: 0px 1px 1px 1px; border-color: black; }
+.border_f { border: 1px solid black; }
+
 button:hover {
     background-color: pink;
     border-color: white;

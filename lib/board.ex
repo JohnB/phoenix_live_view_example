@@ -42,9 +42,11 @@ defmodule Board do
     # We expect callers to get the board every second, so if more than a second has elapsed,
     # update our user count and reset the time.
     if Time.diff(now, state[:reset_at]) > 0 do
+      IO.puts(inspect {"reset", current_count, now})
       state = Map.merge(state, %{reset_at: now, user_count: current_count, current_count: 0})
       {:reply, state, state}
     else
+      IO.puts(inspect {"update", current_count, now})
       state = put_in(state[:current_count], current_count)
       {:reply, state, state}
     end
