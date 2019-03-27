@@ -1,5 +1,6 @@
 .board {
     width: 80px;
+    border: 1px solid black;
 }
 
 .board td {
@@ -7,13 +8,27 @@
     min-width: 20px;
     height: 20px;
     min-height: 20px;
-    border: 1px solid black;
     padding: 0;
     margin: 0;
+    border: 0px;
 }
 
-.border_e { border-width: 0px 1px 1px 1px; border-color: black; }
-.border_f { border: 1px solid black; }
+.border_0 { /* none */ }
+.border_1 { border-top: 1px solid black !important; }
+.border_2 { border-right: 1px solid black !important; }
+.border_3 { border-top: 1px solid black !important; border-right: 1px solid black !important; }
+.border_4 { border-bottom: 1px solid black !important; }
+.border_5 { border-top: 1px solid black !important; border-bottom: 1px solid black !important; }
+.border_6 { border-right: 1px solid black !important; border-bottom: 1px solid black !important; }
+.border_7 { border-right: 1px solid black !important; border-right: 1px solid black !important; border-bottom: 1px solid black !important; }
+.border_8 { border-left: 1px solid black !important; }
+.border_9 { border-top: 1px solid black !important; border-left: 1px solid black !important; }
+.border_a { border-right: 1px solid black !important; border-left: 1px solid black !important; }
+.border_b { border-top: 1px solid black !important; border-right: 1px solid black !important; border-left: 1px solid black !important; }
+.border_c { border-bottom: 1px solid black !important; border-left: 1px solid black !important; }
+.border_d { border-top: 1px solid black !important; border-bottom: 1px solid black !important; border-left: 1px solid black !important; }
+.border_e { border-right: 1px solid black !important; border-bottom: 1px solid black !important; border-left: 1px solid black !important; }
+.border_f { border: 1px solid black !important; }
 
 button:hover {
     background-color: pink;

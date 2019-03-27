@@ -73,7 +73,7 @@ defmodule DemoWeb.CollaborativeCanvasLive do
           <td id="16" phx-click="paint-one-cell_16" class="<%= @board["16"] %>">
           </td>
         </tr>
-      <tbody>
+      </tbody>
     </table>
     """
   end
