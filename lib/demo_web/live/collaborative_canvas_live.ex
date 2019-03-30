@@ -4,6 +4,8 @@ defmodule DemoWeb.CollaborativeCanvasLive do
 
   def render(assigns) do
     ~L"""
+    <h2>Pixels with Frenemies!</h2>
+    <p>Pick a Color - Paint a Pixel - Before Others Do!</p>
     <div class="color-picker">
       <button
         class="red <%= @selected["red"] %>"
@@ -17,6 +19,7 @@ defmodule DemoWeb.CollaborativeCanvasLive do
         class="green <%= @selected["green"] %>"
         phx-click="set-color-green">
       </button>
+      <br/>
       <button
         class="yellow <%= @selected["yellow"] %>"
         phx-click="set-color-yellow">
@@ -29,6 +32,7 @@ defmodule DemoWeb.CollaborativeCanvasLive do
         class="white <%= @selected["white"] %>"
         phx-click="set-color-white">
       </button>
+      <br/>
       Users: <%= @user_count %>
     </div>
     <table class="board">
@@ -109,6 +113,9 @@ defmodule DemoWeb.CollaborativeCanvasLive do
   end
   def handle_event("set-color-yellow", _, socket) do
     {:noreply, assign(socket, paint: "yellow", selected: %{"yellow" => "selected"})}
+  end
+  def handle_event("set-color-purple", _, socket) do
+    {:noreply, assign(socket, paint: "purple", selected: %{"purple" => "selected"})}
   end
   def handle_event("set-color-orange", _, socket) do
     {:noreply, assign(socket, paint: "orange", selected: %{"orange" => "selected"})}

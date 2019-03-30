@@ -1,13 +1,13 @@
 .board {
-    width: 80px;
+    width: 160px;
     border: 1px solid black;
 }
 
 .board td {
-    width: 20px;
-    min-width: 20px;
-    height: 20px;
-    min-height: 20px;
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    min-height: 40px;
     padding: 0;
     margin: 0;
     border: 0px;
@@ -31,7 +31,6 @@
 .border_f { border: 1px solid black !important; }
 
 button:hover {
-    background-color: pink;
     border-color: white;
     border-width: medium;
 }
@@ -42,7 +41,8 @@ button:hover {
 }
 .red { background-color: red }
 .green { background-color: green }
-.blue { background-color: blue }
+.blue { background-color: aqua }
 .yellow { background-color: yellow }
+.purple { background-color: light-purple }
 .orange { background-color: orange }
 .white { background-color: white }
