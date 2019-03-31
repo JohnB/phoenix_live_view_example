@@ -1,75 +1,137 @@
-<h2>Pixels with Frenemies!</h2>
+<h3>Pixels with Frenemies!</h3>
 <p>Pick a Color - Paint a Pixel - Before Others Do!</p>
 <div class="color-picker">
-    <button
-            class="red <%= @selected["red"] %>"
-    phx-click="set-color-red">
-    </button>
-    <button
-            class="blue <%= @selected["blue"] %>"
-    phx-click="set-color-blue">
-    </button>
-    <button
-            class="green <%= @selected["green"] %>"
-    phx-click="set-color-green">
-    </button>
-    <br/>
-    <button
-            class="yellow <%= @selected["yellow"] %>"
-    phx-click="set-color-yellow">
-    </button>
-    <button
-            class="orange <%= @selected["orange"] %>"
-    phx-click="set-color-orange">
-    </button>
-    <button
-            class="white <%= @selected["white"] %>"
-    phx-click="set-color-white">
-    </button>
-    <br/>
-    Users: <%= @user_count %>
+  <button class="red <%= @selected["red"] %>" phx-click="set-color-red"></button>
+  <button class="blue <%= @selected["blue"] %>" phx-click="set-color-blue"></button>
+  <button class="green <%= @selected["green"] %>" phx-click="set-color-green"></button>
+  <br/>
+  <button class="yellow <%= @selected["yellow"] %>" phx-click="set-color-yellow"></button>
+  <button class="orange <%= @selected["orange"] %>" phx-click="set-color-orange"></button>
+  <button class="white <%= @selected["white"] %>" phx-click="set-color-white"></button>
+  <br/>
+  Users: <%= @user_count %>
 </div>
 <table class="board">
-    <tbody>
+  <tbody>
     <tr>
-        <td id="01" phx-click="paint-one-cell_01" class="<%= @board["01"] %>">
-        </td>
-        <td id="02" phx-click="paint-one-cell_02" class="<%= @board["02"] %>">
-        </td>
-        <td id="03" phx-click="paint-one-cell_03" class="<%= @board["03"] %>">
-        </td>
-        <td id="04" phx-click="paint-one-cell_04" class="<%= @board["04"] %>">
-        </td>
+      <td phx-click='paint-one-cell_0' class='<%= @board["0"] %>'></td>
+      <td phx-click='paint-one-cell_1' class='<%= @board["1"] %>'></td>
+      <td phx-click='paint-one-cell_2' class='<%= @board["2"] %>'></td>
+      <td phx-click='paint-one-cell_3' class='<%= @board["3"] %>'></td>
+      <td phx-click='paint-one-cell_4' class='<%= @board["4"] %>'></td>
+      <td phx-click='paint-one-cell_5' class='<%= @board["5"] %>'></td>
+      <td phx-click='paint-one-cell_6' class='<%= @board["6"] %>'></td>
+      <td phx-click='paint-one-cell_7' class='<%= @board["7"] %>'></td>
+      <td phx-click='paint-one-cell_8' class='<%= @board["8"] %>'></td>
+      <td phx-click='paint-one-cell_9' class='<%= @board["9"] %>'></td>
     </tr>
     <tr>
-        <td id="05" phx-click="paint-one-cell_05" class="<%= @board["05"] %>">
-        </td>
-        <td id="06" phx-click="paint-one-cell_06" class="<%= @board["06"] %>">
-        </td>
-        <td id="07" phx-click="paint-one-cell_07" class="<%= @board["07"] %>">
-        </td>
-        <td id="08" phx-click="paint-one-cell_08" class="<%= @board["08"] %>">
-        </td>
+      <td phx-click='paint-one-cell_10' class='<%= @board["10"] %>'></td>
+      <td phx-click='paint-one-cell_11' class='<%= @board["11"] %>'></td>
+      <td phx-click='paint-one-cell_12' class='<%= @board["12"] %>'></td>
+      <td phx-click='paint-one-cell_13' class='<%= @board["13"] %>'></td>
+      <td phx-click='paint-one-cell_14' class='<%= @board["14"] %>'></td>
+      <td phx-click='paint-one-cell_15' class='<%= @board["15"] %>'></td>
+      <td phx-click='paint-one-cell_16' class='<%= @board["16"] %>'></td>
+      <td phx-click='paint-one-cell_17' class='<%= @board["17"] %>'></td>
+      <td phx-click='paint-one-cell_18' class='<%= @board["18"] %>'></td>
+      <td phx-click='paint-one-cell_19' class='<%= @board["19"] %>'></td>
     </tr>
     <tr>
-        <td id="09" phx-click="paint-one-cell_09" class="<%= @board["09"] %>">
-        </td>
-        <td id="10" phx-click="paint-one-cell_10" class="<%= @board["10"] %>">
-        </td>
-        <td id="11" phx-click="paint-one-cell_11" class="<%= @board["11"] %>">
-        </td>
-        <td id="12" phx-click="paint-one-cell_12" class="<%= @board["12"] %>">
-        </td>
+      <td phx-click='paint-one-cell_20' class='<%= @board["20"] %>'></td>
+      <td phx-click='paint-one-cell_21' class='<%= @board["21"] %>'></td>
+      <td phx-click='paint-one-cell_22' class='<%= @board["22"] %>'></td>
+      <td phx-click='paint-one-cell_23' class='<%= @board["23"] %>'></td>
+      <td phx-click='paint-one-cell_24' class='<%= @board["24"] %>'></td>
+      <td phx-click='paint-one-cell_25' class='<%= @board["25"] %>'></td>
+      <td phx-click='paint-one-cell_26' class='<%= @board["26"] %>'></td>
+      <td phx-click='paint-one-cell_27' class='<%= @board["27"] %>'></td>
+      <td phx-click='paint-one-cell_28' class='<%= @board["28"] %>'></td>
+      <td phx-click='paint-one-cell_29' class='<%= @board["29"] %>'></td>
     </tr>
     <tr>
-        <td id="13" phx-click="paint-one-cell_13" class="<%= @board["13"] %>">
-        </td>
-        <td id="14" phx-click="paint-one-cell_14" class="<%= @board["14"] %>">
-        </td>
-        <td id="15" phx-click="paint-one-cell_15" class="<%= @board["15"] %>">
-        </td>
-        <td id="16" phx-click="paint-one-cell_16" class="<%= @board["16"] %>">
-        </td>
+      <td phx-click='paint-one-cell_30' class='<%= @board["30"] %>'></td>
+      <td phx-click='paint-one-cell_31' class='<%= @board["31"] %>'></td>
+      <td phx-click='paint-one-cell_32' class='<%= @board["32"] %>'></td>
+      <td phx-click='paint-one-cell_33' class='<%= @board["33"] %>'></td>
+      <td phx-click='paint-one-cell_34' class='<%= @board["34"] %>'></td>
+      <td phx-click='paint-one-cell_35' class='<%= @board["35"] %>'></td>
+      <td phx-click='paint-one-cell_36' class='<%= @board["36"] %>'></td>
+      <td phx-click='paint-one-cell_37' class='<%= @board["37"] %>'></td>
+      <td phx-click='paint-one-cell_38' class='<%= @board["38"] %>'></td>
+      <td phx-click='paint-one-cell_39' class='<%= @board["39"] %>'></td>
     </tr>
-    </tbody>
+    <tr>
+      <td phx-click='paint-one-cell_40' class='<%= @board["40"] %>'></td>
+      <td phx-click='paint-one-cell_41' class='<%= @board["41"] %>'></td>
+      <td phx-click='paint-one-cell_42' class='<%= @board["42"] %>'></td>
+      <td phx-click='paint-one-cell_43' class='<%= @board["43"] %>'></td>
+      <td phx-click='paint-one-cell_44' class='<%= @board["44"] %>'></td>
+      <td phx-click='paint-one-cell_45' class='<%= @board["45"] %>'></td>
+      <td phx-click='paint-one-cell_46' class='<%= @board["46"] %>'></td>
+      <td phx-click='paint-one-cell_47' class='<%= @board["47"] %>'></td>
+      <td phx-click='paint-one-cell_48' class='<%= @board["48"] %>'></td>
+      <td phx-click='paint-one-cell_49' class='<%= @board["49"] %>'></td>
+    </tr>
+    <tr>
+      <td phx-click='paint-one-cell_50' class='<%= @board["50"] %>'></td>
+      <td phx-click='paint-one-cell_51' class='<%= @board["51"] %>'></td>
+      <td phx-click='paint-one-cell_52' class='<%= @board["52"] %>'></td>
+      <td phx-click='paint-one-cell_53' class='<%= @board["53"] %>'></td>
+      <td phx-click='paint-one-cell_54' class='<%= @board["54"] %>'></td>
+      <td phx-click='paint-one-cell_55' class='<%= @board["55"] %>'></td>
+      <td phx-click='paint-one-cell_56' class='<%= @board["56"] %>'></td>
+      <td phx-click='paint-one-cell_57' class='<%= @board["57"] %>'></td>
+      <td phx-click='paint-one-cell_58' class='<%= @board["58"] %>'></td>
+      <td phx-click='paint-one-cell_59' class='<%= @board["59"] %>'></td>
+    </tr>
+    <tr>
+      <td phx-click='paint-one-cell_60' class='<%= @board["60"] %>'></td>
+      <td phx-click='paint-one-cell_61' class='<%= @board["61"] %>'></td>
+      <td phx-click='paint-one-cell_62' class='<%= @board["62"] %>'></td>
+      <td phx-click='paint-one-cell_63' class='<%= @board["63"] %>'></td>
+      <td phx-click='paint-one-cell_64' class='<%= @board["64"] %>'></td>
+      <td phx-click='paint-one-cell_65' class='<%= @board["65"] %>'></td>
+      <td phx-click='paint-one-cell_66' class='<%= @board["66"] %>'></td>
+      <td phx-click='paint-one-cell_67' class='<%= @board["67"] %>'></td>
+      <td phx-click='paint-one-cell_68' class='<%= @board["68"] %>'></td>
+      <td phx-click='paint-one-cell_69' class='<%= @board["69"] %>'></td>
+    </tr>
+    <tr>
+      <td phx-click='paint-one-cell_70' class='<%= @board["70"] %>'></td>
+      <td phx-click='paint-one-cell_71' class='<%= @board["71"] %>'></td>
+      <td phx-click='paint-one-cell_72' class='<%= @board["72"] %>'></td>
+      <td phx-click='paint-one-cell_73' class='<%= @board["73"] %>'></td>
+      <td phx-click='paint-one-cell_74' class='<%= @board["74"] %>'></td>
+      <td phx-click='paint-one-cell_75' class='<%= @board["75"] %>'></td>
+      <td phx-click='paint-one-cell_76' class='<%= @board["76"] %>'></td>
+      <td phx-click='paint-one-cell_77' class='<%= @board["77"] %>'></td>
+      <td phx-click='paint-one-cell_78' class='<%= @board["78"] %>'></td>
+      <td phx-click='paint-one-cell_79' class='<%= @board["79"] %>'></td>
+    </tr>
+    <tr>
+      <td phx-click='paint-one-cell_80' class='<%= @board["80"] %>'></td>
+      <td phx-click='paint-one-cell_81' class='<%= @board["81"] %>'></td>
+      <td phx-click='paint-one-cell_82' class='<%= @board["82"] %>'></td>
+      <td phx-click='paint-one-cell_83' class='<%= @board["83"] %>'></td>
+      <td phx-click='paint-one-cell_84' class='<%= @board["84"] %>'></td>
+      <td phx-click='paint-one-cell_85' class='<%= @board["85"] %>'></td>
+      <td phx-click='paint-one-cell_86' class='<%= @board["86"] %>'></td>
+      <td phx-click='paint-one-cell_87' class='<%= @board["87"] %>'></td>
+      <td phx-click='paint-one-cell_88' class='<%= @board["88"] %>'></td>
+      <td phx-click='paint-one-cell_89' class='<%= @board["89"] %>'></td>
+    </tr>
+    <tr>
+      <td phx-click='paint-one-cell_90' class='<%= @board["90"] %>'></td>
+      <td phx-click='paint-one-cell_91' class='<%= @board["91"] %>'></td>
+      <td phx-click='paint-one-cell_92' class='<%= @board["92"] %>'></td>
+      <td phx-click='paint-one-cell_93' class='<%= @board["93"] %>'></td>
+      <td phx-click='paint-one-cell_94' class='<%= @board["94"] %>'></td>
+      <td phx-click='paint-one-cell_95' class='<%= @board["95"] %>'></td>
+      <td phx-click='paint-one-cell_96' class='<%= @board["96"] %>'></td>
+      <td phx-click='paint-one-cell_97' class='<%= @board["97"] %>'></td>
+      <td phx-click='paint-one-cell_98' class='<%= @board["98"] %>'></td>
+      <td phx-click='paint-one-cell_99' class='<%= @board["99"] %>'></td>
+    </tr>
+  </tbody>
 </table>
