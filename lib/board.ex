@@ -25,7 +25,9 @@ defmodule Board do
   # Server
   def init(_init_arg) do
     # The bogus 12345 value will be fixed on the first 1-second update of the actual count.
-    {:ok, %{width: 10, height: 10, board: %{}, user_count: 12345, current_count: 0, reset_at: Time.utc_now}}
+    squares = Map.new((0..15), fn x -> {"#{x}", "red"} end)
+#    IO.puts("Squares: #{inspect(squares)}")
+    {:ok, %{width: 10, height: 10, board: squares, user_count: 12345, current_count: 0, reset_at: Time.utc_now}}
   end
   
   def handle_call({:paint_one_square, location, color}, _from, state) do
