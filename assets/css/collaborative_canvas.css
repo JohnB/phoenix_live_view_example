@@ -1,13 +1,13 @@
 .board {
-    width: 160px;
+    width: 280px;
     border: 1px solid black;
 }
 
 .board td {
-    width: 40px;
-    min-width: 40px;
-    height: 40px;
-    min-height: 40px;
+    width: 28px;
+    min-width: 28px;
+    height: 28px;
+    min-height: 28px;
     padding: 0;
     margin: 0;
     border: 0px;
