@@ -16,6 +16,7 @@ defmodule DemoWeb.CollaborativeCanvasLive do
       width: width,
       height: height,
       board: board,
+      dots: 0,
       user_count: 0,
       selected: %{"blue" => "selected"}
     )}
@@ -49,8 +50,8 @@ defmodule DemoWeb.CollaborativeCanvasLive do
   end
 
   def handle_event("paint-one-cell_" <> location, _, socket) do
-    %{paint: paint} = socket.assigns
+    %{paint: paint, dots: dots} = socket.assigns
     %{board: board, user_count: user_count} = Board.paint_one_square(location, paint)
-    {:noreply, assign(socket, board: board, user_count: user_count)}
+    {:noreply, assign(socket, board: board, user_count: user_count, dots: dots + 1)}
   end
 end

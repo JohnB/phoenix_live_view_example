@@ -1,14 +1,16 @@
 <h3>Pixels with Frenemies</h3>
 <p>Pick & Paint - Before Others!</p>
 <div class="color-picker">
-  <button class="red <%= @selected["red"] %>" phx-click="set-color-red"></button>
-  <button class="blue <%= @selected["blue"] %>" phx-click="set-color-blue"></button>
-  <button class="green <%= @selected["green"] %>" phx-click="set-color-green"></button>
+  <span class="color-picker red" phx-click="set-color-red"></span>
+  <span class="color-picker orange" phx-click="set-color-orange"></span>
+  <span class="color-picker yellow" phx-click="set-color-yellow"></span>
+  <span class="color-picker blue" phx-click="set-color-blue"></span>
+  <span class="color-picker green" phx-click="set-color-green"></span>
+  <span class="color-picker white" phx-click="set-color-white"></span>
   <br/>
-  <button class="yellow <%= @selected["yellow"] %>" phx-click="set-color-yellow"></button>
-  <button class="orange <%= @selected["orange"] %>" phx-click="set-color-orange"></button>
-  <button class="white <%= @selected["white"] %>" phx-click="set-color-white"></button>
-  <br/>
+  <span class="swatch <%= @paint %>">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  <span><%= @dots %></span>
+  &nbsp;
   Users: <%= @user_count %>
 </div>
 <table class="board">

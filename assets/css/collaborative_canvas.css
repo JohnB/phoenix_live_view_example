@@ -13,6 +13,26 @@
     border: 0px;
 }
 
+.swatch {
+    width: 8px;
+    min-width: 8px;
+    height: 8px;
+    min-height: 8px;
+    padding: 0;
+    margin: 0;
+    border: 0px;
+    outline: 1px solid darkgray;
+}
+
+span.color-picker {
+    display: inline-block;
+    border: 0.1rem solid black;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
 .border_0 { /* none */ }
 .border_1 { border-top: 1px solid black !important; }
 .border_2 { border-right: 1px solid black !important; }
@@ -30,15 +50,6 @@
 .border_e { border-right: 1px solid black !important; border-bottom: 1px solid black !important; border-left: 1px solid black !important; }
 .border_f { border: 1px solid black !important; }
 
-button:hover {
-    border-color: white;
-    border-width: medium;
-}
-.selected {
-    border-style: dotted;
-    border-color: black;
-    border-width: medium;
-}
 .red { background-color: red }
 .green { background-color: green }
 .blue { background-color: aqua }
