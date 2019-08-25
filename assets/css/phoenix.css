@@ -60,8 +60,8 @@ select {
   border-bottom: 1px solid #e3e3e3;
   background: #eee;
   border-radius: 6px;
-  padding: 3em;
-  margin-bottom: 3rem;
+  padding: 1em;
+  /*margin-bottom: 1rem;*/
   font-weight: 200;
   font-size: 120%;
 }
@@ -70,7 +70,7 @@ select {
 }
 .phx-logo {
   min-width: 300px;
-  margin: 1rem;
+  /*margin: 1rem;*/
   display: block;
 }
 .phx-logo img {

@@ -1,12 +1,11 @@
-<section class="phx-herox">
-  <h2><%= gettext "Welcome to %{name}!", name: "Phoenix LiveView" %></h2>
+<section class="phx-hero">
+  <h2>Tiling Game</h2>
 </section>
 
 <%= live_render(@conn, DemoWeb.Game) %>
 
 <section class="row">
   <article class="column">
-    <h4>LiveView Examples</h4>
     <ul>
       <li><%= link "Collaborative Canvas", to: Routes.live_path(@conn, DemoWeb.CollaborativeCanvasLive) %></li>
       <li><%= link "Snake", to: Routes.page_path(@conn, :snake) %></li>

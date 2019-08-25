@@ -12,7 +12,7 @@ defmodule DemoWeb.WeatherLive do
   end
 
   def mount(_session, socket) do
-    send(self(), {:put, "Austin"})
+    send(self(), {:put, "Berkeley"})
     {:ok, assign(socket, location: nil, weather: "...")}
   end
 
