@@ -1,13 +1,13 @@
 .game-board {
-    width: 90px;
+    width: 500px;
     border: 1px dashed black;
 }
 
 .game-board td {
-    width: 30px;
-    min-width: 30px;
-    height: 30px;
-    min-height: 30px;
+    width: 25px;
+    min-width: 25px;
+    height: 25px;
+    min-height: 25px;
     padding: 0;
     margin: 0;
     border: 0px;
