@@ -2,13 +2,15 @@ defmodule DemoWeb.CollaborativeCanvasLive do
   use Phoenix.LiveView
   import Calendar.Strftime
 
+  @refresh_interval_ms 500
+
   def render(assigns) do
     DemoWeb.PageView.render("collaborative_canvas.html", assigns)
   end
 
   def mount(_session, socket) do
     # Refresh the client periodically, to keep up with other painters.
-    if connected?(socket), do: :timer.send_interval(  1_000, self(), :tick)
+    if connected?(socket), do: :timer.send_interval( @refresh_interval_ms, self(), :tick)
 
     %{board: board, width: width, height: height} = Board.board()
     {:ok, assign(socket,
